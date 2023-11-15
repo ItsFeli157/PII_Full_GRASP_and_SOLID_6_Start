@@ -16,6 +16,26 @@ namespace Full_GRASP_And_SOLID
 
         public Product FinalProduct { get; set; }
 
+        public bool Cooked = false;
+
+        public int GetCookTime()
+        {
+            int result = 0;
+
+            foreach (BaseStep step in this.steps)
+            {
+                result = step.Time;
+            }
+
+            return result;
+        }
+        public void Cook()
+        {
+            RecipeAdapter tiempo = new RecipeAdapter(this);
+            CountdownTimer timer = new CountdownTimer();
+            timer.Register(this.GetCookTime(), tiempo); // adapter para el RecipeAdapter, incluido en el patron ISP
+        }
+
         // Agregado por Creator
         public void AddStep(Product input, double quantity, Equipment equipment, int time)
         {
