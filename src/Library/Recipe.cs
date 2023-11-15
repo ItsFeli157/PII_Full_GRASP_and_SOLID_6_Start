@@ -33,7 +33,7 @@ namespace Full_GRASP_And_SOLID
         {
             RecipeAdapter tiempo = new RecipeAdapter(this);
             CountdownTimer timer = new CountdownTimer();
-            timer.Register(this.GetCookTime(), tiempo); // adapter para el RecipeAdapter, incluido en el patron ISP
+            timer.Register(this.GetCookTime(), tiempo); // Use adapter para el RecipeAdapter, incluido en el patron ISP
         }
 
         // Agregado por Creator
