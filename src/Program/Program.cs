@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace Full_GRASP_And_SOLID
 {
@@ -34,7 +35,7 @@ namespace Full_GRASP_And_SOLID
 
             Console.WriteLine($"Cooked: {recipe.Cooked}");
             recipe.Cook();
-            Thread.Sleep(500); // 0.5 segundos
+            Thread.Sleep(2000); // 0.5 segundos
             Console.WriteLine($"Cooked: {recipe.Cooked}");
         }
 
